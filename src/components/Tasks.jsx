@@ -7,7 +7,7 @@ const Tasks = () => {
         <p>Task</p>
         <input class="form-control " type="text" value=""></input>
         <p>Day & Time</p>
-        <input class="form-control" type="time-date" value=""></input>
+        <input class="form-control" type="datetime-local" value=""></input>
         <input
           className="input-btn rounded-2"
           type="submit"
