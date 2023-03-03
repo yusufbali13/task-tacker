@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 
 const Tasks = ({ data, setData }) => {
-  const [text, setText] = useState("");
+  const [task, setTask] = useState("");
   const [day, setDay] = useState("");
 
   const handleSubmit = (e) => {
@@ -9,15 +10,13 @@ const Tasks = ({ data, setData }) => {
     setData([
       ...data,
       {
-        text: text,
+        id: data.length + 1,
+        task: task,
         day: day.split("T")[0],
-        time: day.split("T")[1],
-        id: data.legth + 1,
+        date: day.split("T")[1],
         clicked: true,
       },
-      console.log(data),
     ]);
-
     console.log(data);
   };
   return (
@@ -27,21 +26,27 @@ const Tasks = ({ data, setData }) => {
         <input
           className="form-control "
           type="text"
-          onChange={(e) => setText(e.target.value)}
+          value={task}
+          placeholder="Add task"
+          onChange={(e) => setTask(e.target.value)}
+          required
         ></input>
         <p>Day & Time</p>
         <input
+          value={day}
           className="form-control"
           type="datetime-local"
+          required
           onChange={(e) => setDay(e.target.value)}
         ></input>
         <input
           className="input-btn rounded-2"
           type="submit"
           value="Save Task"
+          placeholder="Add day & Time"
         ></input>
       </form>
-      {data.length < 1 && <p className="text-center">No task to show...</p>}
+    { (data.length< 1) && <p className="text-center">No task to show...</p>}
     </div>
   );
 };

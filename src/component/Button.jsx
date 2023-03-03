@@ -9,11 +9,11 @@ const Button = ({ show, setShow }) => {
         className={
           show
             ? "text-center m-auto p-1 rounded-1 d-flex border border-none text-light "
-            : "text-center m-auto p-1 rounded-1 d-flex border border-none text-light btn-false"
+            : "text-center m-auto p-1 rounded-1 d-flex border border-none text-light btn-color"
         }
         onClick={() => setShow(!show)}
       >
-        {show ? "Show and task Bar" : "Close and task Bar"}
+        {show ? "Show" : "Close"} and task Bar
       </button>
     </div>
   );

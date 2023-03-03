@@ -1,6 +1,9 @@
 import React from "react";
 
-const AddTask = ({ data, setData }) => {
+
+const AddTask = ({ data, setData}) => {
+
+
   const handleDoubleClick = (id) => {
     setData(
       data.map((item) =>
@@ -12,10 +15,11 @@ const AddTask = ({ data, setData }) => {
           : item
       )
     );
-    console.log(data);
+    console.log(data)
   };
 
   const handleDeleteClick = (id) => {
+    
     setData(data.filter((item) => item.id !== id));
   };
 
@@ -48,11 +52,7 @@ const AddTask = ({ data, setData }) => {
                 </div>
               </div>
 
-              <div
-                className="icon "
-                role="button"
-                onClick={() => handleDeleteClick(id)}
-              >
+              <div className="icon " role="button" onClick={() => handleDeleteClick(id)}>
                 ❌
               </div>
             </li>
