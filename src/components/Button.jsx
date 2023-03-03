@@ -13,7 +13,7 @@ const Button = ({ show, setShow }) => {
         }
         onClick={() => setShow(!show)}
       >
-        Show and task Bar
+        {show ? "Show and task Bar" : "Close and task Bar"}
       </button>
     </div>
   );
