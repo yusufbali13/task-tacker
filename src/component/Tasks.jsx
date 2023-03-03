@@ -46,7 +46,7 @@ const Tasks = ({ data, setData }) => {
           placeholder="Add day & Time"
         ></input>
       </form>
-    { (data.length< 1) && <p className="text-center">No task to show...</p>}
+      {data.length < 1 && <p className="text-center">No task to show...</p>}
     </div>
   );
 };
