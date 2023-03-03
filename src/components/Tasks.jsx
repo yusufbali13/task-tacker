@@ -1,13 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Tasks = () => {
+const Tasks = ({ data, setData }) => {
+  const [text, setText] = useState("");
+  const [day, setDay] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setData([
+      ...data,
+      {
+        text: text,
+        day: day.split("T")[0],
+        time: day.split("T")[1],
+        id: data.legth + 1,
+        clicked: true,
+      },
+    ]);
+
+    console.log(data);
+  };
   return (
     <div className="m-auto">
-      <form>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <p>Task</p>
-        <input class="form-control " type="text"></input>
+        <input
+          className="form-control "
+          type="text"
+          onChange={(e) => setText(e.target.value)}
+        ></input>
         <p>Day & Time</p>
-        <input class="form-control" type="datetime-local"></input>
+        <input
+          className="form-control"
+          type="datetime-local"
+          onChange={(e) => setDay(e.target.value)}
+        ></input>
         <input
           className="input-btn rounded-2"
           type="submit"
