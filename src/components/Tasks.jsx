@@ -15,6 +15,7 @@ const Tasks = ({ data, setData }) => {
         id: data.legth + 1,
         clicked: true,
       },
+      console.log(data),
     ]);
 
     console.log(data);
@@ -40,7 +41,7 @@ const Tasks = ({ data, setData }) => {
           value="Save Task"
         ></input>
       </form>
-      <p className="text-center">No task to show...</p>
+      {data.length < 1 && <p className="text-center">No task to show...</p>}
     </div>
   );
 };
