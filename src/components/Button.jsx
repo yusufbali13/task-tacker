@@ -6,7 +6,11 @@ const Button = ({ show, setShow }) => {
     <div>
       <button
         type="submit"
-        className="text-center m-auto p-1 rounded-1 d-flex border border-none text-light "
+        className={
+          show
+            ? "text-center m-auto p-1 rounded-1 d-flex border border-none text-light "
+            : "text-center m-auto p-1 rounded-1 d-flex border border-none text-light btn-false"
+        }
         onClick={() => setShow(!show)}
       >
         Show and task Bar
